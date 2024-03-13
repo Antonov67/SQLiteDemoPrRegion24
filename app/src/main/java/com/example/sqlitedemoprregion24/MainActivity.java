@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
         mContext = this;
         mDBConnector = new DBMatches(this);
-        mListView = (ListView) findViewById(R.id.list);
+        mListView = findViewById(R.id.list);
         myAdapter = new myListAdapter(mContext, mDBConnector.selectAll());
         mListView.setAdapter(myAdapter);
         registerForContextMenu(mListView);
@@ -158,9 +158,9 @@ public class MainActivity extends AppCompatActivity {
             if (convertView == null)
                 convertView = mLayoutInflater.inflate(R.layout.item, null);
 
-            TextView vTeamHome= (TextView)convertView.findViewById(R.id.TeamHome);
-            TextView vTeamGuest = (TextView)convertView.findViewById(R.id.TeamGuest);
-            TextView vTotal=(TextView)convertView.findViewById(R.id.TeamTotal);
+            TextView vTeamHome= convertView.findViewById(R.id.TeamHome);
+            TextView vTeamGuest = convertView.findViewById(R.id.TeamGuest);
+            TextView vTotal=convertView.findViewById(R.id.TeamTotal);
 
 
             Matches md = arrayMyMatches.get(position);
